@@ -1,0 +1,14 @@
+{
+    "hamlet": {
+        "name": "Hamlet",
+        "type": "tragedy"
+    },
+    "as-like": {
+        "name": "Hamlet",
+        "type": "tragedy"
+    },
+    "othello": {
+        "name": "Hamlet",
+        "type": "tragedy"
+    }
+}
