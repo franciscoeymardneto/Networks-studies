@@ -4,11 +4,11 @@
         "type": "tragedy"
     },
     "as-like": {
-        "name": "Hamlet",
-        "type": "tragedy"
+        "name": "As You Like It",
+        "type": "comedy"
     },
     "othello": {
-        "name": "Hamlet",
+        "name": "Othello",
         "type": "tragedy"
     }
 }

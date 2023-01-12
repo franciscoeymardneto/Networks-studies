@@ -1,6 +1,6 @@
 
 const invoices = require('./invoices.json')
-const plays = require('./plays.json')
+const playsList = require('./plays.json')
 
 function statement(invoice, plays) {
     let totalAmount = 0
@@ -12,8 +12,12 @@ function statement(invoice, plays) {
     }).format
 
 
+    // console.log(invoice.performances)
+    // console.log(plays)
     for (let perf of invoice.performances) {
         const play = plays[perf.playID]
+      
+        
         let thisAmount = 0
 
         switch (play.type) {
@@ -42,7 +46,7 @@ function statement(invoice, plays) {
         if ("comedy" === play.type) volumeCredits += Math.floor(perf.audience)
         // print line for this order
 
-        result += ` ${play.name}: ${format(thisAmount / 100)} (${perf.audience}) `
+        result += ` ${play.name}: ${format(thisAmount / 100)} (${perf.audience} seats) \n`
         totalAmount += thisAmount
 
         }
@@ -55,5 +59,5 @@ function statement(invoice, plays) {
 
 
 for (const invoice of invoices) {
-    statement(invoice,plays)
+    console.log(statement(invoice,playsList))
 }
