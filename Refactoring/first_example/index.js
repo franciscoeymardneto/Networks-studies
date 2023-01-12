@@ -1,6 +1,10 @@
+
+const invoices = require('./invoices.json')
+const plays = require('./plays.json')
+
 function statement(invoice, plays) {
     let totalAmount = 0
-    let volumeCredit = 0
+    let volumeCredits = 0
     let result = `Statement for ${invoice.customer}\n`
 
     const format = new Intl.NumberFormat("es-US", {
@@ -32,7 +36,7 @@ function statement(invoice, plays) {
         // add volume credits
 
         volumeCredits += Math.max(perf.audience - 30, 0)
-        
+
         // add extra credit for every ten comedy attendees
 
         if ("comedy" === play.type) volumeCredits += Math.floor(perf.audience)
@@ -47,4 +51,9 @@ function statement(invoice, plays) {
         result += `You earned ${ volumeCredits } credits\n` 
         
         return result
+}
+
+
+for (const invoice of invoices) {
+    statement(invoice,plays)
 }
